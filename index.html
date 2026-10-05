@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Youssef Ahmed — Builder. Developer. Creator.</title>
+<style>
+:root{--bg:#07090d;--card:rgba(255,255,255,.04);--bd:rgba(80,220,255,.2);--tx:#e6f1f7;--mu:#8ea3b3;--c:#22e4ff;--b:#3b82ff;--p:#9a6bff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#07090d}}
+:root[data-theme="dark"]{--bg:#07090d}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px);height:auto}
+body{background:var(--bg);color:var(--tx);font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:hidden}
+.mono,h1,h2,h3,nav a,.tag{font-family:"Courier New",ui-monospace,monospace}
+canvas#bg{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+main,footer{position:relative;z-index:1}
+section{padding:96px 6vw;max-width:1200px;margin:auto}
+h2{font-size:clamp(1.6rem,4vw,2.6rem);letter-spacing:.06em;margin-bottom:8px;background:linear-gradient(90deg,var(--c),var(--p));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--mu);max-width:640px;margin-bottom:28px}
+.glass{background:var(--card);border:1px solid var(--bd);border-radius:16px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:.3s}
+.glass:hover{border-color:var(--c);box-shadow:0 0 24px rgba(34,228,255,.18);transform:translateY(-3px)}
+.btn{display:inline-block;padding:12px 22px;border-radius:10px;border:1px solid var(--c);color:var(--c);background:rgba(34,228,255,.06);font:600 .9rem "Courier New",monospace;cursor:pointer;text-decoration:none;transition:.25s}
+.btn:hover,.btn:focus-visible{background:var(--c);color:#001018;box-shadow:0 0 22px var(--c)}
+.btn.alt{border-color:var(--p);color:#cdb8ff}.btn.alt:hover{background:var(--p);color:#fff;box-shadow:0 0 22px var(--p)}
+:focus-visible{outline:2px solid var(--c);outline-offset:3px}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:calc(14px + env(safe-area-inset-top,0px)) 5vw 14px;transition:.35s}
+nav.f{top:10px;left:50%;right:auto;transform:translateX(-50%);width:min(940px,94vw);padding:10px 20px;border-radius:999px;background:rgba(10,14,20,.7);border:1px solid var(--bd);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+nav b{letter-spacing:.2em;color:var(--c)}nav div{display:flex;gap:16px;overflow-x:auto;scrollbar-width:none}
+nav a{color:var(--mu);text-decoration:none;font-size:.78rem;white-space:nowrap}nav a:hover{color:var(--c)}
+#hero{min-height:100svh;display:grid;align-content:center;gap:12px;position:relative;padding-top:110px}
+#sph{position:absolute;right:-4vw;top:50%;transform:translateY(-50%);width:min(560px,70vw);aspect-ratio:1;opacity:.9;pointer-events:none}
+h1{font-size:clamp(2.6rem,10vw,6.4rem);line-height:1;letter-spacing:.04em;text-shadow:0 0 40px rgba(34,228,255,.4)}
+h1 span{display:inline-block;animation:up .8s both}
+@keyframes up{from{opacity:0;transform:translateY(40px)}}
+.role{font:1.2rem "Courier New",monospace;color:var(--c)}.lead{max-width:540px;color:var(--mu)}
+.hud{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.hud i{font:normal .7rem "Courier New",monospace;padding:4px 10px;border:1px solid var(--bd);border-radius:6px;color:var(--c);background:rgba(34,228,255,.05)}
+.hud i:before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:#2dff9a;margin-right:6px;animation:bl 2s infinite}
+@keyframes bl{50%{opacity:.2}}
+.row{display:flex;flex-wrap:wrap;gap:12px;margin-top:14px}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}.grid>div{padding:20px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}.chip{padding:6px 12px;border-radius:999px;border:1px solid var(--bd);font-size:.82rem;color:var(--tx);background:var(--card);transition:.2s;cursor:default}.chip:hover{border-color:var(--p);transform:translateY(-2px)}
+h3{font-size:1rem;color:var(--c);margin-bottom:10px;letter-spacing:.05em}
+.hs{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 18px;-webkit-overflow-scrolling:touch}
+.pc{flex:0 0 min(340px,82vw);scroll-snap-align:start;padding:0;overflow:hidden}
+.pv{height:120px;display:grid;place-items:center;font:700 2rem "Courier New",monospace;letter-spacing:.1em}
+.pb{padding:18px}.tag{font-size:.7rem;color:var(--p);letter-spacing:.1em}
+.pc p{color:var(--mu);font-size:.9rem;margin:6px 0 10px}
+details{margin:10px 0}summary{cursor:pointer;color:var(--c);font:.85rem "Courier New",monospace}details ul{padding-left:18px;color:var(--mu);font-size:.85rem;margin-top:6px}
+.term{background:#04070a;border:1px solid var(--bd);border-radius:12px;font:.88rem/1.6 "Courier New",monospace;padding:16px;min-height:220px;max-height:340px;overflow:auto;color:#9ff}
+.term .p{color:#2dff9a}.term form{display:flex;gap:6px}.term input{flex:1;background:none;border:0;color:#fff;font:inherit;outline:0}
+#ov{position:fixed;inset:0;z-index:90;background:rgba(3,5,8,.96);display:none;padding:calc(20px + env(safe-area-inset-top,0px)) 5vw 20px}#ov.on{display:flex;flex-direction:column;gap:10px}#ov .term{flex:1;max-height:none}
+#fab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:60;width:54px;height:54px;border-radius:50%;font-size:1rem}
+.tl{display:grid;gap:14px;position:relative;padding-left:28px;border-left:2px solid var(--bd)}.tl>div{padding:14px 18px;position:relative}.tl>div:before{content:"";position:absolute;left:-37px;top:20px;width:12px;height:12px;border-radius:50%;background:var(--c);box-shadow:0 0 12px var(--c)}
+.steps{display:flex;flex-wrap:wrap;gap:10px}.st{flex:1 1 110px;text-align:center;padding:18px 8px;font:700 .9rem "Courier New",monospace;cursor:pointer;color:var(--mu)}.st.in{color:var(--c)}.st:hover{background:rgba(154,107,255,.15)}
+#sd{margin-top:14px;color:var(--mu);min-height:3em}
+.bar{height:4px;background:var(--bd);border-radius:4px;margin-top:10px;overflow:hidden}.bar i{display:block;height:100%;width:60%;background:linear-gradient(90deg,var(--c),var(--p));animation:sl 3s ease-in-out infinite alternate}@keyframes sl{to{width:95%}}
+.fun{background:linear-gradient(135deg,rgba(154,107,255,.15),rgba(34,228,255,.1));border-radius:28px;padding:34px}
+.tb{display:flex;flex-wrap:wrap;gap:12px}.tb .chip{padding:10px 16px;animation:fl 5s ease-in-out infinite alternate}.tb .chip:nth-child(odd){animation-delay:-2s}.tb .chip:nth-child(3n){animation-delay:-3.5s}@keyframes fl{to{transform:translateY(-8px)}}
+#boot{position:fixed;inset:0;z-index:200;background:#000;display:grid;place-content:center;font:1rem "Courier New",monospace;color:var(--c);transition:opacity .6s;padding:20px}#boot.x{opacity:0;pointer-events:none}
+#boot button{margin-top:20px;justify-self:start;background:none;border:1px solid var(--bd);color:var(--mu);padding:6px 12px;border-radius:6px;cursor:pointer;font:inherit}
+#cd,#cr{position:fixed;top:0;left:0;pointer-events:none;z-index:300;border-radius:50%;display:none}
+#cd{width:6px;height:6px;background:var(--c);box-shadow:0 0 12px var(--c)}#cr{width:36px;height:36px;border:1px solid rgba(34,228,255,.5);transition:width .2s,height .2s,background .2s}#cr.h{width:60px;height:60px;background:rgba(34,228,255,.1)}
+@media(hover:hover) and (pointer:fine){.cur #cd,.cur #cr{display:block}.cur,.cur a,.cur button,.cur summary{cursor:none}}
+#cf input,#cf textarea{background:#04070a;border:1px solid var(--bd);border-radius:8px;color:var(--tx);padding:10px;font:inherit;width:100%}#cf input:focus,#cf textarea:focus{border-color:var(--c);outline:0}
+footer{text-align:center;padding:50px 6vw 70px;color:var(--mu);border-top:1px solid var(--bd)}
+@media(max-width:700px){nav div{gap:12px}nav b{display:none}#sph{opacity:.35}section{padding:72px 5vw}}
+@media(prefers-reduced-motion:reduce){*,*:before{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+</style></head><body>
+<div id="boot" role="status"><div id="bt"></div><button id="skip">Skip intro ›</button></div>
+<div id="cd"></div><div id="cr"></div>
+<canvas id="bg" aria-hidden="true"></canvas>
+<nav id="nv" aria-label="Main"><b>YOUSSEF</b><div><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#security">Security</a><a href="#games">Game Lab</a><a href="#ai">AI Lab</a><a href="#contact">Contact</a></div></nav>
+<main>
+<section id="hero"><canvas id="sph" aria-hidden="true"></canvas>
+<div class="hud" aria-hidden="true"><i>SYSTEM: ONLINE</i><i>LOCATION: EGYPT</i><i>STATUS: BUILDING</i><i>PROJECTS: ACTIVE</i><i>MODE: CREATE</i></div>
+<h1 id="h1">YOUSSEF AHMED</h1><div class="role">Builder. Developer. Creator.</div>
+<p class="lead">I build websites, experiment with AI, explore cybersecurity, create game projects, and turn random ideas into things that actually work.</p>
+<div class="row"><a class="btn" href="#about">Explore My World</a><a class="btn alt" href="#projects">View Projects</a><button class="btn" onclick="openT()">Enter Terminal</button></div></section>
+
+<section id="about" class="rv"><h2>WHO IS YOUSSEF?</h2><p class="sub">A young creator who learns by actually building things — breaking them, fixing them, and shipping them.</p>
+<div class="glass" style="padding:22px"><div class="chips"><span class="chip">Programming</span><span class="chip">Web development</span><span class="chip">Cybersecurity</span><span class="chip">Networking</span><span class="chip">Linux</span><span class="chip">Python</span><span class="chip">AI</span><span class="chip">Game development</span><span class="chip">Unreal Engine</span><span class="chip">Fortnite / OGFN projects</span><span class="chip">UI/UX</span><span class="chip">Creative technology</span><span class="chip">Problem solving</span></div></div></section>
+
+<section id="skills" class="rv"><h2>SKILL CONSTELLATION</h2><p class="sub">Technologies and areas Youssef explores and builds with — not certifications.</p>
+<div class="grid">
+<div class="glass"><h3>DEVELOPMENT</h3><div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">TypeScript</span><span class="chip">React</span><span class="chip">Next.js</span><span class="chip">Tailwind CSS</span><span class="chip">Python</span></div></div>
+<div class="glass"><h3>CREATIVE / FRONTEND</h3><div class="chips"><span class="chip">UI/UX</span><span class="chip">Framer Motion</span><span class="chip">Three.js</span><span class="chip">React Three Fiber</span><span class="chip">Interactive web</span><span class="chip">Animation</span></div></div>
+<div class="glass"><h3>CYBER / TECH</h3><div class="chips"><span class="chip">Linux</span><span class="chip">Networking</span><span class="chip">Security research</span><span class="chip">OSINT</span><span class="chip">CTFs</span><span class="chip">Kali Linux</span><span class="chip">Pentest concepts</span></div></div>
+<div class="glass"><h3>GAME DEVELOPMENT</h3><div class="chips"><span class="chip">Unreal Engine</span><span class="chip">Game servers</span><span class="chip">Fortnite / OGFN</span><span class="chip">Multiplayer concepts</span><span class="chip">Experimentation</span></div></div></div></section>
+
+<section id="projects" class="rv"><h2>PROJECTS</h2><p class="sub">Swipe or scroll sideways. Tap “Details” to expand.</p>
+<div class="hs" tabindex="0" aria-label="Projects">
+<article class="glass pc"><div class="pv" style="background:linear-gradient(135deg,#1b2cff55,#9a6bff55)">FLAIRE</div><div class="pb"><span class="tag">FEATURED · IN DEVELOPMENT</span><h3>Flaire</h3><p>A custom OGFN/Fortnite project aiming to be a complete modern gaming and community platform.</p><div class="chips"><span class="chip">Next.js</span><span class="chip">TypeScript</span><span class="chip">Tailwind</span><span class="chip">Supabase</span></div>
+<details><summary>Details</summary><ul><li>Login system &amp; dashboard</li><li>Announcements &amp; updates</li><li>Launcher downloads &amp; docs</li><li>Status page</li><li>Discord/community integration</li><li>shadcn/ui, Framer Motion, Unreal Engine / game-server experiments</li></ul></details></div></article>
+<article class="glass pc"><div class="pv" style="background:linear-gradient(135deg,#ff8a3d44,#22e4ff44)">SNAPCOOK</div><div class="pb"><span class="tag">ACTIVE · ITERATING</span><h3>Snapcook</h3><p>An AI-powered recipe platform for discovering and generating recipes through a modern interactive experience.</p><a class="btn" href="https://www.snapcook.app" target="_blank" rel="noopener">www.snapcook.app</a>
+<details><summary>Details</summary><ul><li>Recipe discovery</li><li>AI recipe generation</li><li>Interactive UI</li></ul></details></div></article>
+<article class="glass pc"><div class="pv" style="background:linear-gradient(135deg,#22e4ff33,#3b82ff33)">CHRONOS</div><div class="pb"><span class="tag">CONCEPT</span><h3>Chronos</h3><p>A lightweight timer / stopwatch web concept.</p>
+<details><summary>Details</summary><ul><li>Speed first</li><li>Minimal UI, smooth animation</li><li>Lightweight performance</li></ul></details></div></article>
+<article class="glass pc"><div class="pv" style="background:linear-gradient(135deg,#9a6bff33,#ffffff22)">♞ CHESS AI</div><div class="pb"><span class="tag">CONCEPT</span><h3>Chess AI</h3><p>A chess project concept: play a bot or a friend.</p>
+<details><summary>Details</summary><ul><li>Human vs bot: Easy, Normal, Hard, Expert</li><li>Local 1v1 mode</li></ul></details></div></article>
+<article class="glass pc"><div class="pv" style="background:linear-gradient(135deg,#2dff9a33,#22e4ff33)">LAB</div><div class="pb"><span class="tag">ALWAYS GROWING</span><h3>Experiments Lab</h3><p>Smaller ideas and prototypes.</p>
+<details><summary>Open the lab</summary><ul><li>Game projects</li><li>Web &amp; UI experiments</li><li>AI experiments</li><li>Android app concepts</li><li>Utility websites</li></ul></details></div></article>
+</div></section>
+
+<section id="ai" class="rv"><h2>AI LAB</h2><p class="sub">Experiments, not finished products.</p>
+<div class="glass" style="padding:22px"><div class="chips"><span class="chip">AI chat</span><span class="chip">AI interfaces</span><span class="chip">AI assistants</span><span class="chip">AI-generated content</span><span class="chip">AI app builders</span><span class="chip">Voice/video AI concepts</span><span class="chip">AI-powered websites</span></div></div></section>
+
+<section id="security" class="rv"><h2>THE SECURITY LAB</h2><p class="sub">Cybersecurity is something Youssef enjoys learning through experimentation and CTF-style challenges: Linux, networking, security concepts, OSINT, Python, web security concepts, Kali Linux and network analysis. Educational and portfolio-focused.</p>
+<div class="term" id="lt" aria-label="Terminal demo"></div></section>
+
+<section id="games" class="rv"><h2>GAME LAB</h2><p class="sub">Unreal Engine, Fortnite, OGFN, game servers, multiplayer technology, performance and custom projects.</p>
+<div class="grid"><div class="glass"><h3>FLAIRE ◆ FEATURED</h3><p style="color:var(--mu)">The platform side of an OGFN project: accounts, launcher, docs and community.</p><div class="bar"><i></i></div></div>
+<div class="glass"><h3>GAME TECH</h3><p style="color:var(--mu)">Exploring game servers, multiplayer concepts and keeping things fast.</p><div class="bar"><i style="animation-delay:-1s"></i></div></div></div></section>
+
+<section id="curious" class="rv"><h2>BUILT WITH CURIOSITY</h2><p class="sub">Tap a step.</p>
+<div class="steps" id="steps"></div><p id="sd" class="mono"></p></section>
+
+<section id="journey" class="rv"><h2>JOURNEY</h2><p class="sub">Broad stages, no made-up dates.</p><div class="tl">
+<div class="glass rv"><h3>Curiosity</h3>Started exploring technology, games and computers.</div>
+<div class="glass rv"><h3>Coding</h3>Started experimenting with websites and programming.</div>
+<div class="glass rv"><h3>Cybersecurity</h3>Started learning Linux, networking, security and CTF concepts.</div>
+<div class="glass rv"><h3>AI</h3>Started experimenting with AI tools and AI-powered applications.</div>
+<div class="glass rv"><h3>Game Technology</h3>Started exploring Unreal Engine, OGFN and game-server concepts.</div>
+<div class="glass rv"><h3>Building</h3>Started turning ideas into actual projects.</div>
+<div class="glass rv"><h3>Today</h3>Continuously building, experimenting and learning.</div></div></section>
+
+<section id="now" class="rv"><h2>CURRENTLY BUILDING</h2><p class="sub">Portfolio labels, not live monitoring.</p><div class="grid">
+<div class="glass"><h3>Flaire</h3><span class="tag">ACTIVE</span><div class="bar"><i></i></div></div>
+<div class="glass"><h3>Snapcook</h3><span class="tag">ACTIVE / ITERATING</span><div class="bar"><i></i></div></div>
+<div class="glass"><h3>AI Experiments</h3><span class="tag">EXPERIMENTING</span><div class="bar"><i></i></div></div>
+<div class="glass"><h3>Game Technology</h3><span class="tag">LEARNING</span><div class="bar"><i></i></div></div>
+<div class="glass"><h3>Web Projects</h3><span class="tag">ALWAYS BUILDING</span><div class="bar"><i></i></div></div></div></section>
+
+<section class="rv"><div class="fun"><h2>MORE THAN CODE</h2><p class="sub">Gaming, exploring new tech, building random ideas, trying new AI tools, experimenting with websites, learning by doing, making things more interactive, and finding ways to improve performance.</p>
+<h3>MY DIGITAL TOOLBOX</h3><div class="tb"><span class="chip">React</span><span class="chip">Next.js</span><span class="chip">TypeScript</span><span class="chip">Tailwind</span><span class="chip">Python</span><span class="chip">Linux</span><span class="chip">Kali Linux</span><span class="chip">Unreal Engine</span><span class="chip">Three.js</span><span class="chip">Framer Motion</span><span class="chip">Supabase</span><span class="chip">AI tools</span><span class="chip">Git</span><span class="chip">GitHub</span></div></div></section>
+
+<section id="contact" class="rv" style="text-align:center"><h2>LET'S BUILD SOMETHING</h2><p class="sub" style="margin:0 auto 24px">Got an idea? I probably want to build it too.</p>
+<div class="row" style="justify-content:center" id="links"></div><form id="cf" class="glass" style="max-width:520px;margin:28px auto 0;padding:22px;display:grid;gap:12px;text-align:left"><label class="mono" for="cn">Your name</label><input id="cn" required maxlength="80" autocomplete="name"><label class="mono" for="cm">Message</label><textarea id="cm" required rows="5" maxlength="1500"></textarea><button class="btn" type="submit">Send Message</button><small id="cs" role="status" style="color:var(--mu)">Your message goes straight to my inbox.</small></form>
+</section>
+</main>
+<footer><b class="mono">Youssef Ahmed</b><p>Building ideas into reality.</p><small>© 2026 Youssef Ahmed</small></footer>
+<button id="fab" class="btn" onclick="openT()" aria-label="Open terminal">&gt;_</button>
+<div id="ov" role="dialog" aria-label="Terminal"><button class="btn" onclick="closeT()" style="align-self:flex-end">Close ✕ (Esc)</button><div class="term" id="ot"></div></div>
+<script>
+// CONFIG: add real URLs here; buttons only appear if set
+const LINKS={GitHub:"",Discord:"",Email:"yards1237@gmail.com"};
+const $=s=>document.querySelector(s),RM=matchMedia("(prefers-reduced-motion:reduce)").matches,MOB=innerWidth<700||matchMedia("(pointer:coarse)").matches;
+const L=document.getElementById("links");const set=Object.entries(LINKS).filter(e=>e[1]);
+if(set.length)set.forEach(([k,v])=>{const a=document.createElement("a");a.className="btn";a.textContent=k;if(k=="Email"){a.href="https://mail.google.com/mail/?view=cm&fs=1&to="+encodeURIComponent(v);a.target="_blank";a.rel="noopener";const c=document.createElement("button");c.className="btn alt";c.textContent="Copy Email";c.onclick=()=>{(navigator.clipboard?navigator.clipboard.writeText(v):Promise.reject()).then(()=>c.textContent="Copied ✓").catch(()=>{c.textContent=v})};L.appendChild(a);L.appendChild(c);return}a.href=v;L.appendChild(a)});else L.innerHTML='<span class="mono" style="color:var(--mu)">GitHub · Discord · Email — links coming soon</span>';
+document.getElementById("cf").onsubmit=async e=>{e.preventDefault();const n=$("#cn").value,m=$("#cm").value,st=$("#cs"),bt=e.target.querySelector("button");bt.disabled=true;st.textContent="Sending...";
+try{const r=await fetch("https://formsubmit.co/ajax/"+LINKS.Email,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify({name:n,message:m,_subject:"Portfolio message from "+n,_template:"table",_captcha:"false"})});const j=await r.json();if(r.ok&&String(j.success)=="true"){st.textContent="Message sent ✓ Thank you!";e.target.reset()}else throw 0}
+catch(x){st.innerHTML='Could not send. Email me directly: <a style="color:var(--c)" target="_blank" rel="noopener" href="https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(LINKS.Email)+'">open Gmail</a>'}
+bt.disabled=false};
+// boot
+const lines=["INITIALIZING...","LOADING DIGITAL PROFILE...","LOADING PROJECTS...","CONNECTING...","WELCOME, YOUSSEF."];let bi=0,bt=$("#bt");
+function endBoot(){clearInterval(bTimer);$("#boot").classList.add("x");setTimeout(()=>$("#boot").remove(),700)}
+const bTimer=setInterval(()=>{if(bi<lines.length){bt.innerHTML+=lines[bi++]+"<br>"}else endBoot()},RM?100:380);
+$("#skip").onclick=endBoot;
+// nav
+const nv=$("#nv");addEventListener("scroll",()=>nv.classList.toggle("f",scrollY>80),{passive:true});
+// reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll(".rv").forEach(e=>io.observe(e));
+// hero text split
+$("#h1").innerHTML=[..."YOUSSEF AHMED"].map((c,i)=>c==" "?" ":`<span style="animation-delay:${.05*i}s">${c}</span>`).join("");
+// steps
+const S={IDEA:"It starts with a random thought.",EXPERIMENT:"Try it fast, in the smallest way.",BUILD:"Turn the experiment into something real.",BREAK:"Push it until it fails.",FIX:"Understand why, then repair it.",IMPROVE:"Make it faster, cleaner, better.",SHIP:"Put it out there and learn from it."};
+const sp=$("#steps");Object.keys(S).forEach((k,i)=>{const d=document.createElement("button");d.className="glass st";d.textContent=(i+1)+" "+k;d.onclick=()=>{document.querySelectorAll(".st").forEach(x=>x.classList.remove("in"));d.classList.add("in");$("#sd").textContent="> "+S[k]};sp.appendChild(d)});
+// terminal
+const CMD={help:"commands: help about projects skills flaire snapcook cyber games contact whoami interests status clear",
+about:"Youssef Ahmed — young builder, developer and creator from Egypt. Learns by building.",
+projects:"Flaire · Snapcook · Chronos · Chess AI · Experiments Lab",
+skills:"Dev: HTML CSS JS TS React Next.js Tailwind Python | Creative: Three.js, Framer Motion | Cyber: Linux, networking, OSINT, CTFs | Games: Unreal Engine",
+flaire:"Custom OGFN/Fortnite platform in development: login, dashboard, updates, launcher downloads, docs, status page, community integration.",
+snapcook:"AI-powered recipe platform — www.snapcook.app",
+cyber:"Learning cybersecurity through experiments and CTF-style challenges. Educational only.",
+games:"Unreal Engine, OGFN, game servers, multiplayer concepts and performance.",
+contact:set.length?set.map(e=>e[0]+": "+e[1]).join(" | "):"Contact links are not configured yet.",
+whoami:"builder",interests:"cybersecurity\nweb\nai\ngames\nlinux",status:"learning..."};
+function mk(el,intro){el.innerHTML="";const out=document.createElement("div");const f=document.createElement("form");f.innerHTML='<span class="p">youssef@lab:~$</span><input autocomplete="off" spellcheck="false" aria-label="Command">';el.append(out,f);const inp=f.querySelector("input");
+const print=t=>{out.append(Object.assign(document.createElement("div"),{textContent:t,style:"white-space:pre-wrap"}))};
+f.onsubmit=e=>{e.preventDefault();const c=inp.value.trim().toLowerCase();inp.value="";print("youssef@lab:~$ "+c);if(c=="clear")out.innerHTML="";else if(c)print(CMD[c]||"command not found: "+c+" (try 'help')");el.scrollTop=1e5};
+if(intro)print("Type 'help' to begin.");return{print,inp}}
+const ot=mk($("#ot"),1);
+function openT(){$("#ov").classList.add("on");ot.inp.focus()}function closeT(){$("#ov").classList.remove("on")}
+addEventListener("keydown",e=>{if(e.key=="Escape")closeT()});
+const lt=$("#lt");let ran=0;new IntersectionObserver((es,o)=>{if(es[0].isIntersecting&&!ran){ran=1;o.disconnect();const q=mk(lt,0);const seq=[["whoami"],["interests"],["status"]];let i=0;(function n(){if(i>=seq.length)return;const c=seq[i++][0];q.print("youssef@lab:~$ "+c);q.print(CMD[c]);setTimeout(n,RM?0:900)})()}}).observe(lt);
+// cursor
+if(matchMedia("(hover:hover) and (pointer:fine)").matches){document.body.classList.add("cur");let x=0,y=0,rx=0,ry=0;const d=$("#cd"),r=$("#cr");
+addEventListener("mousemove",e=>{x=e.clientX;y=e.clientY;d.style.transform=`translate(${x-3}px,${y-3}px)`;const b=e.target.closest(".btn");if(b){const R=b.getBoundingClientRect();b.style.transform=`translate(${(x-R.left-R.width/2)*.15}px,${(y-R.top-R.height/2)*.25}px)`}});
+document.addEventListener("mouseout",e=>{const b=e.target.closest&&e.target.closest(".btn");if(b)b.style.transform=""});
+document.addEventListener("mouseover",e=>r.classList.toggle("h",!!e.target.closest("a,button,summary,.chip")));
+(function t(){rx+=(x-rx)*.15;ry+=(y-ry)*.15;r.style.transform=`translate(${rx-18}px,${ry-18}px)`;requestAnimationFrame(t)})()}
+// particles + sphere
+let vis=!document.hidden;document.addEventListener("visibilitychange",()=>vis=!document.hidden);
+const bg=$("#bg"),bx=bg.getContext("2d");let W,H;const N=MOB?22:55;const P=[];
+function rs(){W=bg.width=innerWidth;H=bg.height=innerHeight}rs();addEventListener("resize",rs);
+for(let i=0;i<N;i++)P.push({x:Math.random()*2e3,y:Math.random()*1e3,v:.1+Math.random()*.3,r:Math.random()*1.5+.3});
+const sc=$("#sph"),sx=sc.getContext("2d");const SZ=sc.width=sc.height=MOB?320:560;let ang=0;
+function draw(){if(vis){bx.clearRect(0,0,W,H);bx.fillStyle="rgba(34,228,255,.5)";P.forEach(p=>{p.y-=p.v;if(p.y<0){p.y=H;p.x=Math.random()*W}bx.beginPath();bx.arc(p.x%W,p.y,p.r,0,6.3);bx.fill()});
+if(scrollY<innerHeight*1.2){sx.clearRect(0,0,SZ,SZ);const R=SZ*.4,c=SZ/2,rings=MOB?8:14,seg=MOB?24:40;sx.lineWidth=1;
+const pr=(la,lo)=>{let x=Math.cos(la)*Math.cos(lo+ang),z=Math.cos(la)*Math.sin(lo+ang),y=Math.sin(la);const t=.4;const y2=y*Math.cos(t)-z*Math.sin(t),z2=y*Math.sin(t)+z*Math.cos(t);return[c+x*R,c+y2*R,z2]};
+for(let i=1;i<rings;i++){const la=-Math.PI/2+Math.PI*i/rings;sx.beginPath();for(let j=0;j<=seg;j++){const p=pr(la,j/seg*6.283);j?sx.lineTo(p[0],p[1]):sx.moveTo(p[0],p[1])}sx.strokeStyle="rgba(34,228,255,.4)";sx.stroke()}
+for(let k=0;k<8;k++){const lo=k/8*6.283;sx.beginPath();for(let j=0;j<=seg;j++){const p=pr(-Math.PI/2+Math.PI*j/seg,lo);j?sx.lineTo(p[0],p[1]):sx.moveTo(p[0],p[1])}sx.strokeStyle="rgba(154,107,255,.4)";sx.stroke()}
+sx.beginPath();sx.arc(c,c,R*1.15,0,6.3);sx.strokeStyle="rgba(59,130,255,.3)";sx.stroke();ang+=RM?0:.006}}
+requestAnimationFrame(draw)}draw();
+</script></body></html>
